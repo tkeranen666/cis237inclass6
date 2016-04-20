@@ -13,6 +13,14 @@ namespace cis237inclass6
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Usable, but unnecessary code to start with the Foo page
+ /*           
+             routes.MapRoute(
+                name: "Foo",
+                url: "{controller}/Foo",
+                defaults: new { controller = "Home", action = "Foo", id = UrlParameter.Optional }
+                );
+            */
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
