@@ -27,6 +27,7 @@
                     @if (Request.IsAuthenticated) { 
                         @*Added a new link for the foo page. Parameters are text, method (Action), Controller*@
                         <li>@Html.ActionLink("My Foo Page", "Foo", "Home")</li>
+                        <li>@Html.ActionLink("Cars", "Index", "Car")</li>                                                    
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
