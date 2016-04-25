@@ -6,6 +6,30 @@
 
 <h2>Index</h2>
 
+    <div class="form-group">
+        <fieldset>
+            <legend>Search Filter</legend>
+            @{
+                using (Html.BeginForm("Filter", "Car", FormMethod.Post, new { @class = "form-inline" }))
+                {
+                    // This is a CRF (Cross-site Request Forgery) Token
+                    @Html.AntiForgeryToken()
+                
+                    <label for="make">Make</label>
+                    @Html.TextBox("Make", (string)ViewBag.filterMake)
+                    <label for="min">Minimum Cylinders</label>
+                    @Html.TextBox("Min", (string)ViewBag.filterMin)
+                    <label for="max">Maximum Cylinders</label>
+                    @Html.TextBox("Max", (string)ViewBag.filterMax)
+                
+                    <br />
+                    <input type="submit" value="Filter" class="btn btn-info pull-right" />
+                    
+                }
+            }
+        </fieldset>
+    </div>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
